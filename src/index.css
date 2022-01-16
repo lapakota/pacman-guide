@@ -1,341 +1,349 @@
 @font-face {
-  font-family: 'YS Text';
-  src: local('YS Text'), url('fonts/YandexSansText-Regular.woff');
+    font-family: 'YS Text';
+    src: local('YS Text'), url('fonts/YandexSansText-Regular.woff');
 }
 
 @font-face {
-  font-family: 'YS Text';
-  font-weight: bold;
-  src: local('YS Text'), url('fonts/YandexSansText-Bold.woff');
+    font-family: 'YS Text';
+    font-weight: bold;
+    src: local('YS Text'), url('fonts/YandexSansText-Bold.woff');
 }
 
 html,
 body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  width: 100%;
-  margin: 0;
-  padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 
-  background: #484849;
+    background: #484849;
 
-  font: 22px 'YS Text', 'Arial', 'Helvetica', sans-serif;
+    font: 22px 'YS Text', 'Arial', 'Helvetica', sans-serif;
 }
 
 .invisible-header,
 .button {
-  display: none;
+    display: none;
 }
 
 /*-------------------Блок хедера-------------------*/
 
 .header {
-  position: fixed;
-  top: 0;
-  z-index: 5;
+    position: fixed;
+    top: 0;
+    z-index: 5;
 
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 
-  width: 100%;
-  min-width: 600px;
-  height: 60px;
+    width: 100%;
+    min-width: 600px;
+    height: 60px;
 
-  background: #343435;
+    background: #343435;
 
-  color: #fff;
+    color: #fff;
 }
 
 /*-------------------Блок логотипа сайта-------------------*/
 
 .site-logo {
-  width: 180px;
-  height: 100%;
+    width: 180px;
+    height: 100%;
 }
 
 .site-logo-img {
-  height: 100%;
+    height: 100%;
 
-  object-fit: contain;
+    object-fit: contain;
 }
 
 /*-------------------Блок меню-------------------*/
 
 .menu {
-  position: relative;
+    position: relative;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  width: 180px;
+    width: 180px;
 
-  border-right: 1px solid #808080;
-  border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+    border-left: 1px solid #808080;
 }
 
 .menu-header {
-  margin-left: 10px;
+    margin-left: 10px;
 
-  transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in;
 
-  user-select: none;
+    user-select: none;
 }
 
 .menu-header-img {
-  position: absolute;
-  right: 10px;
+    position: absolute;
+    right: 10px;
 
-  width: 35px;
-  height: 35px;
+    width: 35px;
+    height: 35px;
 
-  filter: invert();
+    filter: invert(100%);
 }
 
 .menu-items {
-  position: absolute;
+    position: absolute;
 
-  top: 100%;
-  left: 0;
+    top: 100%;
+    left: 0;
 
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 
-  transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
 
-  transform: translateY(-200%);
+    transform: translateY(-200%);
 
-  background: #343435;
+    background: #343435;
 
-  list-style: none;
+    list-style: none;
 }
 
 .menu-item {
-  transition: 0.4s;
+    transition: 0.4s;
 
-  opacity: 0;
+    opacity: 0;
 }
 
 .menu:hover .menu-header {
-  color: #ffdb58;
+    color: #ffdb58;
 }
 
 .menu:hover .menu-items {
-  animation: show 0.2s 1;
-  animation-fill-mode: forwards;
-  transform: translateY(0);
+    animation: show 0.2s 1;
+    animation-fill-mode: forwards;
+    transform: translateY(0);
 }
 
 .menu:hover .menu-item {
-  animation: show 0.4s 1;
+    animation: show 0.4s 1;
 
-  animation-delay: 0.05s;
-  animation-fill-mode: forwards;
+    animation-delay: 0.05s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .ghost-link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .ghost-info {
-  position: relative;
+    position: relative;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  width: 180px;
-  height: 50px;
+    width: 180px;
+    height: 50px;
 
-  border-top: 1px solid gray;
+    border-top: 1px solid gray;
 }
 
 .ghost-name {
-  margin: 0 0 0 10px;
+    margin: 0 0 0 10px;
 
-  transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in;
 
-  color: #fff;
+    color: #fff;
 
-  font-size: 23px;
-  font-weight: normal;
+    font-size: 23px;
+    font-weight: normal;
 }
 
 .menu-items:hover .menu-item {
-  opacity: 1;
+    opacity: 1;
 }
 
 .blinky:hover .ghost-name,
 .inky:hover .ghost-name,
 .pinky:hover .ghost-name,
 .clyde:hover .ghost-name {
-  color: #ffdb58;
+    color: #ffdb58;
 }
 
 .ghost-img {
-  position: absolute;
-  right: 10px;
+    position: absolute;
+    right: 10px;
 
-  width: 50px;
-  height: 100%;
+    width: 50px;
+    height: 100%;
 
-  object-fit: contain;
+    object-fit: contain;
 }
 
 /*-------------------Блок поиска-------------------*/
 .search-form {
-  position: absolute;
-  top: 15px;
-  right: 25px;
+    position: absolute;
+    top: 15px;
+    right: 25px;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .site-search,
 .find-button {
-  height: 30px;
+    height: 30px;
 
-  transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
 }
 
 .site-search {
-  width: 270px;
+    width: 270px;
 }
 
 .find-button {
-  width: 70px;
+    width: 70px;
 
-  border-width: 1px;
+    border-width: 1px;
 
-  background: #ffdb58;
+    background: #ffdb58;
 }
 
 /*-------------------Блок мейна и контента-------------------*/
 
 .main {
-  position: relative;
+    display: flex;
+    position: relative;
 
-  min-width: 600px;
-  height: 100%;
+    align-items: center;
+
+    min-width: 600px;
+    flex-grow: 1;
+    padding-top: 60px;
 }
 
 .content {
-  position: relative;
+    position: relative;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  width: 70%;
-  margin: auto;
+    width: 70%;
+    margin: auto;
 
-  padding-top: 80px;
 }
 
 .content-header {
-  margin: auto auto 40px;
+    margin: auto auto 20px;
 
-  font-size: 50px;
+    font-size: 50px;
 }
 
 .content-text {
-  margin: 0 0 80px;
+    margin: 0 0 20px;
+    height: 100%;
 
-  color: #fff;
-  font-size: 30px;
+    color: #fff;
+    font-size: 30px;
 
-  text-align: center;
+    text-align: center;
 }
 
 .content-img {
-  height: 300px;
-  margin: 40px auto;
+    height: 250px;
+    margin: 20px auto;
 
-  object-fit: contain;
+    object-fit: contain;
 }
 
 .pacman-img {
-  transform: translateX(37px);
+    transform: translateX(37px);
 }
 
 .start-page-header {
-  color: #ffdb58;
+    color: #ffdb58;
 }
 
 .blinky-page-header {
-  color: #ed1b24;
+    color: #ed1b24;
 }
 
 .inky-page-header {
-  color: #76d2f6;
+    color: #76d2f6;
 }
 
 .pinky-page-header {
-  color: #f5a3a1;
+    color: #f5a3a1;
 }
 
 .clyde-page-header {
-  color: #febc12;
+    color: #febc12;
 }
 
 /*-------------------Блок футера-------------------*/
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  z-index: 5;
+    z-index: 5;
 
-  width: 100%;
-  height: 40px;
+    width: 100%;
+    height: 40px;
 
-  background: #343435;
-  color: #fff;
+    background: #343435;
+    color: #fff;
 }
 
 .footer-content {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  height: 100%;
-  margin-left: 20px;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.pacman-wiki-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s ease-in;
+}
+
+.pacman-wiki-link:hover {
+    color: #ffdb58;
 }
 
 /*-------------------Медиа запросы-------------------*/
 
 @media screen and (max-width: 810px) {
-  .content-text {
-    text-align: left;
-  }
+    .content-text {
+        text-align: left;
+    }
 
-  .content-header {
-    margin: 0 0 40px;
-  }
+    .content-header {
+        margin: 0 0 20px;
+    }
 
-  .pacman-img {
-    margin-left: 0;
-  }
+    .pacman-img {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 770px) {
-  .site-search {
-    width: 120px;
-  }
+    .site-search {
+        width: 120px;
+    }
 
-  .find-button {
-    width: 70px;
-  }
+    .find-button {
+        width: 70px;
+    }
 }
 
-/*@media screen and (max-device-width: 500px) {*/
-/*  .header {*/
-/*    height: 120px;*/
-/*  }*/
-/*}*/
